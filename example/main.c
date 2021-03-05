@@ -4,9 +4,7 @@
  *
  * This file includes test functions for safe_strn library
  *
- * If you have any problem, see https://github.com/gozeloglu/safe_strn
- * If you want to contact the author of the code, mail to
- * gozeloglu@gmail.com
+ * Source code: https://github.com/gozeloglu/safe_strn
  * */
 
 #include "../lib/safe_string.h"
