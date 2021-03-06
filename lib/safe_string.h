@@ -15,7 +15,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int str_cpy(const char *src, char *dst, size_t s_size);
+/// Copy string from dst to src
+/// \param src - source string to be copied
+/// \param dst - destination string which the content is to be copied
+/// \param n - the number of characters to be copied from source
+/// \return integer value the number of copied characters
+int str_cpy(const char *src, char *dst, size_t n);
 int str_len(const char *s);
 int str_cat(char *src, char *append, size_t src_size, size_t dst_size);
 

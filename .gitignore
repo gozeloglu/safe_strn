@@ -4,5 +4,6 @@ CMakeLists.txt
 
 example/*.out
 lib/*h.*
+test/*h.*
 
 a.out

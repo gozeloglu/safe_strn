@@ -7,12 +7,9 @@
  * Source code: https://github.com/gozeloglu/safe_strn
  * */
 
-#include "../lib/safe_string.h"
+#include "../test/test_str_cpy.h"
 
 int main() {
-    char *src = "Hello";
-    char *dst = (char *) malloc(sizeof(char *) * 5);
 
-    int len = str_cpy(src, dst, 2);
-    printf("copied str(%s) len: %d\n", dst, len);
+    test_str_cpy();
 }
