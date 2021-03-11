@@ -16,6 +16,19 @@ Then, run the executable file.
 $ ./a.out
 ```
 
+### Usage
+
+```c
+#include "safe_string.h"
+
+int main() {
+    
+    char *src = "hello world";
+    char *new_str = (char *) malloc(sizeof(char) * 12);
+    int len = str_cpy(src, new_str, 11);
+}
+```
+
 ### Documentation
 
 ```C

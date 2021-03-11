@@ -11,7 +11,7 @@
 #include "safe_string.h"
 
 int str_cpy(const char* src, char* dst, size_t n) {
-   int i = 0;
+    int i = 0;
     while (i < n && src[i] != '\0') {
         dst[i] = src[i];
         i++;
