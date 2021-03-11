@@ -7,9 +7,12 @@
  * Source code: https://github.com/gozeloglu/safe_strn
  * */
 
-#include "../test/test_str_cpy.h"
+#include "../test/test_safe_str_lib.h"
 
 int main() {
 
     test_str_cpy();
+    test_str_len();
+    test_dynamic_str_len();
+    test_null_string_length();
 }

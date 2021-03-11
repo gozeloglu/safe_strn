@@ -22,6 +22,12 @@
 /// @param n - the number of characters to be copied from source
 /// @return integer value the number of copied characters
 int str_cpy(const char *src, char *dst, size_t n);
+
+
+/// Find the length of the given string
+///
+/// @param s - string to be found length
+/// @return size_t - length of the string
 int str_len(const char *s);
 int str_cat(char *src, char *append, size_t src_size, size_t dst_size);
 
