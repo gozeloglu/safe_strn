@@ -12,7 +12,10 @@
 int main() {
 
     test_str_cpy();
+    test_src_null_str_cpy();
+    test_str_null_new_str_cpy();
     test_str_len();
     test_dynamic_str_len();
     test_null_string_length();
+    test_str_cat();
 }

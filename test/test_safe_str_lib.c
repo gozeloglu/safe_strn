@@ -23,6 +23,26 @@ void test_str_cpy() {
     printf("%s Passed test.\n", CHECK_MARK);
 }
 
+void test_src_null_str_cpy() {
+    char *src = NULL;
+    char *new_str = (char *) malloc(sizeof(char) * 12);
+    int len = str_cpy(src, new_str, 11);
+
+    assert__("src not null", (len == -1));
+    assert(len == -1);
+    printf("%s Passed test.\n", CHECK_MARK);
+}
+
+void test_str_null_new_str_cpy() {
+    char *src = "hello world";
+    char *new_str = NULL;
+    int len = str_cpy(src, new_str, 11);
+
+    assert__("new_str not null", (len == -2));
+    assert(len == -2);
+    printf("%s Passed test.\n", CHECK_MARK);
+}
+
 void test_str_len() {
     char *chr = "this is a sample string.";
     size_t N = 24;
@@ -62,6 +82,23 @@ void test_null_string_length() {
 
     assert__("not null", (len == expected));
     assert(len == expected);
+    printf("%s Passed test.\n", CHECK_MARK);
+}
+
+void test_str_cat() {
+    int N = 10;
+
+    char *src = (char *) malloc(sizeof(char *) * N+1);
+    char *append = "cd";
+
+    src[0] = 'a';
+    src[1] = 'b';
+    src[2] = '\0';
+
+    int len = str_cat(src, append, N, 2);
+
+    assert__("not equal length", (len == 4));
+    assert((len == 4));
     printf("%s Passed test.\n", CHECK_MARK);
 }
 

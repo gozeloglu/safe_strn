@@ -21,14 +21,28 @@
 /// @param dst - destination string which the content is to be copied
 /// @param n - the number of characters to be copied from source
 /// @return integer value the number of copied characters
+/// @returns -1 if src is not initialized yet. It has a special purpose
+/// @returns -2 if dst is not allocated yet
 int str_cpy(const char *src, char *dst, size_t n);
 
 
 /// Find the length of the given string
 ///
 /// @param s - string to be found length
-/// @return size_t - length of the string
+/// @return int - length of the string
+/// @returns -1 if s is not initialized yet. It has a special purpose
 int str_len(const char *s);
-int str_cat(char *src, char *append, size_t src_size, size_t dst_size);
+
+/// Concatenates the given two strings
+///
+/// @param src - source string which is being appended
+/// @param append - appended string
+/// @param src_size - max allocated length
+/// @param app_size - appended string length
+/// @return length of the new string - src length
+/// @returns -1 if src is initialized with NULL
+/// @returns -2 if append string is initialized with NULL
+/// @returns -3 if there is no enough memory for appending new string
+int str_cat(char *src, const char *append, size_t src_size, size_t app_size);
 
 #endif //SAFE_STRN_SAFE_STRING_H

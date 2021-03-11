@@ -44,3 +44,9 @@ int str_len(const char *s);
 ```
 
 Returns the length of the string. 
+
+```C
+int str_cat(char *src, const char *append, size_t src_size, size_t app_size);
+```
+
+Concatenates the given strings. Returns the new length of the `src`. 

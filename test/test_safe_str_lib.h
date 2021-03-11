@@ -11,8 +11,11 @@
 #define SAFE_STRN_TEST_SAFE_STR_LIB_H
 
 void test_str_cpy();
+void test_src_null_str_cpy();
+void test_str_null_new_str_cpy();
 void test_str_len();
 void test_dynamic_str_len();
 void test_null_string_length();
+void test_str_cat();
 
 #endif //SAFE_STRN_TEST_SAFE_STR_LIB_H
