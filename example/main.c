@@ -18,4 +18,6 @@ int main() {
     test_dynamic_str_len();
     test_null_string_length();
     test_str_cat();
+    test_empty_src_str_cat();
+    test_empty_append_str_cat();
 }
