@@ -93,3 +93,43 @@ int str_cat(char *src, const char *append, size_t src_size, size_t app_size) {
 
     return i;
 }
+
+int str_cmp(const char *str1, const char *str2, size_t str1_size, size_t str2_size) {
+
+    // Check str1 is NULL or not
+    // If both strings are NULL, then return 0
+    // 0 means equal strings
+    // If only str1 is NULL, then second str
+    // is ahead of the first string
+    if (str1 == NULL) {
+        return str2 == NULL ? 0 : -1;
+    }
+
+    // If str2 is NULL, then, automatically
+    // str1 is ahead of the second str
+    if (str2 == NULL) {
+        return 1;
+    }
+
+    // If str1 and str2 characters are not equal,
+    // compare the chars.
+    // If str1 char is bigger than str2 in ASCII values,
+    // return 1, otherwise -1.
+    int i = 0;
+    while (str1[i] != '\0' && str2[i] != '\0' && i < str1_size && i < str2_size) {
+        if (str1[i] != str2[i]) {
+            return str1[i] > str2[i] ? 1 : -1;
+        }
+        i++;
+    }
+
+    // If both str1 and str2 are reached out the
+    // end of strings, then return 0 which means
+    // both strings are equal.
+    if (str1[i] == '\0' && str2[i] == '\0') {
+        return 0;
+    }
+
+    // Check again last character ASCII values
+    return str1[i] > str2[i] ? 1 : -1;
+}

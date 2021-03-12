@@ -131,3 +131,69 @@ void test_empty_append_str_cat() {
     assert((len == 2));
     printf("%s str_cat: Empty append string.\n", CHECK_MARK);
 }
+
+void test_str_cmp() {
+    char *str1 = "abc";
+    char *str2 = "abc";
+
+    int res = str_cmp(str1, str2, 3, 3);
+
+    assert__("str_cmp: Equal string: Not equal strings", (res == 0));
+    assert((res == 0));
+    printf("%s str_cmp: Equal strings\n", CHECK_MARK);
+}
+
+void test_not_equal_str_cmp() {
+    char *str1 = "abc";
+    char *str2 = "abd";
+
+    int res = str_cmp(str1, str2, 3, 3);
+
+    assert__("str_cmp: Not equal string: str2 is before str1", (res == -1));
+    assert((res == -1));
+    printf("%s str_cmp: Not equal strings\n", CHECK_MARK);
+}
+
+void test_not_equal_str2_cmp() {
+    char *str1 = "abd";
+    char *str2 = "abc";
+
+    int res = str_cmp(str1, str2, 3, 3);
+
+    assert__("str_cmp: Not equal string: str1 is before str2", (res == 1));
+    assert((res == 1));
+    printf("%s str_cmp: Not equal strings\n", CHECK_MARK);
+}
+
+void test_empty_str_cmp() {
+    char *str1 = "";
+    char *str2 = "abc";
+
+    int res = str_cmp(str1, str2, 0, 3);
+
+    assert__("str_cmp: Empty string: str1 is empty", (res == -1));
+    assert((res == -1));
+    printf("%s str_cmp: Empty string\n", CHECK_MARK);
+}
+
+void test_null_str_cmp() {
+    char *str1 = "abc";
+    char *str2 = NULL;
+
+    int res = str_cmp(str1, str2, 3, 0);
+
+    assert__("str_cmp: Null string: str1 is empty", (res == 1));
+    assert((res == 1));
+    printf("%s str_cmp: Null string\n", CHECK_MARK);
+}
+
+void test_both_null_str_cmp() {
+    char *str1 = NULL;
+    char *str2 = NULL;
+
+    int res = str_cmp(str1, str2, 0, 0);
+
+    assert__("str_cmp: Both null strings: Both of them are not NULL", (res == 0));
+    assert((res == 0));
+    printf("%s str_cmp: Both of them null string\n", CHECK_MARK);
+}

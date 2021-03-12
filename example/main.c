@@ -20,4 +20,10 @@ int main() {
     test_str_cat();
     test_empty_src_str_cat();
     test_empty_append_str_cat();
+    test_str_cmp();
+    test_not_equal_str_cmp();
+    test_not_equal_str2_cmp();
+    test_empty_str_cmp();
+    test_null_str_cmp();
+    test_both_null_str_cmp();
 }

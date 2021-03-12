@@ -45,4 +45,15 @@ int str_len(const char *s);
 /// @returns -3 if there is no enough memory for appending new string
 int str_cat(char *src, const char *append, size_t src_size, size_t app_size);
 
+/// Compares the given two strings
+///
+/// @param str1 - given first string
+/// @param str2 - given second string
+/// @param str1_size - length of the first string
+/// @param str2_size - length of the second string
+/// @return -1, 0, or 1 with respect to comparison result
+/// @returns -1 if str2 > str1
+/// @returns 0 if str1 == str2
+/// @returns 1 if str1 > str2
+int str_cmp(const char *str1, const char *str2, size_t str1_size, size_t str2_size);
 #endif //SAFE_STRN_SAFE_STRING_H

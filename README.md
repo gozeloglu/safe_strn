@@ -28,6 +28,18 @@ int main() {
     str_cpy(src, new_str, 11);  // Copy src to new_str
     
     int len = str_len(new_str); // Length of new_str
+    
+    char *str1 = "abc";
+    char *str2 = "abc";
+    int res = str_cmp(str1, str2, 3, 3);
+    
+    if (res < 0) {
+        printf("str1 less than str2\n"): 
+    } else if (res > 0){
+        printf("str2 less than str1.\n");
+    } else {
+        printf("str1 and str2 are equal.\n");    // Prints "str1 and str2 are equal."
+    }
 }
 ```
 
@@ -50,3 +62,9 @@ int str_cat(char *src, const char *append, size_t src_size, size_t app_size);
 ```
 
 Concatenates the given strings. Returns the new length of the `src`. 
+
+```c
+int str_cmp(const char *str1, const char *str2, size_t str1_size, size_t str2_size);
+```
+
+Compares the two given strings. If `str1` less than `str2`, returns -1. If `str2` less than `str1`, returns 1. And `str1` and `str2` are equal, then returns 0.
