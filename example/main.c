@@ -29,4 +29,8 @@ int main() {
     test_str_mk();
     test_empty_str_mk();
     test_less_mem_str_mk();
+    test_static_str_cpy();
+    test_static_str_len();
+    test_static_str_cat();
+    test_static_str_cmp();
 }

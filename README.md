@@ -18,6 +18,8 @@ $ ./a.out
 
 ### Usage
 
+Add `lib/` folder under your workspace and include the library as follows. You may need to give the relative path depending on where you put location.
+
 ```c
 #include "safe_string.h"
 

@@ -135,6 +135,11 @@ int str_cmp(const char *str1, const char *str2, size_t str1_size, size_t str2_si
 }
 
 char *str_mk(const char *str, size_t str_len) {
+    // Check str_len for preventing buffer overflow
+    // which is caused by integer overflow
+    // Create and return a string which max length is
+    // UINT_MAX-1 and added null-terminator.
+    // Truncates the overflowed chars in *str
     if (str_len+1 > UINT_MAX) {
         char *s = (char *) malloc(sizeof(char *) * UINT_MAX);
         int i;
@@ -145,6 +150,8 @@ char *str_mk(const char *str, size_t str_len) {
         return s;
     }
 
+    // Allocate the memory up to str_len
+    //Copy chars until reaching null-terminator or max length of the string
     char *s = (char *) malloc(sizeof(char *) * str_len+1);
     int i = 0;
     while (str[i] != '\0' && i < str_len) {
