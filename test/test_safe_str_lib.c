@@ -18,9 +18,9 @@ void test_str_cpy() {
     char *new_str = (char *) malloc(sizeof(char) * 12);
     int len = str_cpy(src, new_str, 11);
 
-    assert__("wrong len", (len == 11));
+    assert__("str_cpy: string length is wrong", (len == 11));
     assert(new_str[11] == src[11]);
-    printf("%s Passed test.\n", CHECK_MARK);
+    printf("%s str_cpy: String copy successful.\n", CHECK_MARK);
 }
 
 void test_src_null_str_cpy() {
@@ -28,9 +28,9 @@ void test_src_null_str_cpy() {
     char *new_str = (char *) malloc(sizeof(char) * 12);
     int len = str_cpy(src, new_str, 11);
 
-    assert__("src not null", (len == -1));
+    assert__("str_cpy: src not null", (len == -1));
     assert(len == -1);
-    printf("%s Passed test.\n", CHECK_MARK);
+    printf("%s str_cpy: src is null.\n", CHECK_MARK);
 }
 
 void test_str_null_new_str_cpy() {
@@ -38,9 +38,9 @@ void test_str_null_new_str_cpy() {
     char *new_str = NULL;
     int len = str_cpy(src, new_str, 11);
 
-    assert__("new_str not null", (len == -2));
+    assert__("str_cpy: new_str not null", (len == -2));
     assert(len == -2);
-    printf("%s Passed test.\n", CHECK_MARK);
+    printf("%s str_cpy: new_str is null.\n", CHECK_MARK);
 }
 
 void test_str_len() {
@@ -49,9 +49,9 @@ void test_str_len() {
 
     int len = str_len(chr);
 
-    assert__("not equal length", (len == N));
+    assert__("str_len: Not equal length", (len == N));
     assert(len == N);
-    printf("%s Passed test.\n", CHECK_MARK);
+    printf("%s str_len: Equal length.\n", CHECK_MARK);
 }
 
 void test_dynamic_str_len() {
@@ -69,9 +69,9 @@ void test_dynamic_str_len() {
 
     int len = str_len(str);
 
-    assert__("not equal length", (len == N));
+    assert__("str_len: Dynamic string. Not equal length", (len == N));
     assert(len == N);
-    printf("%s Passed test.\n", CHECK_MARK);
+    printf("%s str_len: Dynamic string. Equal length of strings.\n", CHECK_MARK);
 }
 
 void test_null_string_length() {
@@ -80,9 +80,9 @@ void test_null_string_length() {
     int len = str_len(string);
     int expected = -1;
 
-    assert__("not null", (len == expected));
+    assert__("str_len: String not null", (len == expected));
     assert(len == expected);
-    printf("%s Passed test.\n", CHECK_MARK);
+    printf("%s str_len: String is null.\n", CHECK_MARK);
 }
 
 void test_str_cat() {
