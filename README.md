@@ -40,31 +40,48 @@ int main() {
     } else {
         printf("str1 and str2 are equal.\n");    // Prints "str1 and str2 are equal."
     }
+    
+    char *str = str_mk("create a new string.", 50); // Create a null-terminated string with maximum 50 length.
 }
 ```
 
 ### Documentation
 
+### `str_mk`
+Creates string by preventing potential buffer overflow. Guarantees putting null-terminator at the end of the string. Also, prevents buffer overflow which is caused by integer overflow.
+
+```c
+char *str_mk(const char *str, size_t str_len);
+```
+
+### `str_cpy`
+
+Copies the string from `src` to `dst`. You need to pass length of the string that you want to copy.
+
 ```C
 int str_cpy(const char *src, char *dst, size_t n));
 ```
 
-Copies the string from `src` to `dst`. You need to pass length of the string that you want to copy. 
+### `str_len` 
+
+Returns the length of the string.
 
 ```C
 int str_len(const char *s);
 ```
 
-Returns the length of the string. 
+### `str_cat` 
+
+Concatenates the given strings. Returns the new length of the `src`.
 
 ```C
 int str_cat(char *src, const char *append, size_t src_size, size_t app_size);
 ```
 
-Concatenates the given strings. Returns the new length of the `src`. 
+### `str_cmp` 
+
+Compares the two given strings. If `str1` less than `str2`, returns -1. If `str2` less than `str1`, returns 1. And `str1` and `str2` are equal, then returns 0.
 
 ```c
 int str_cmp(const char *str1, const char *str2, size_t str1_size, size_t str2_size);
 ```
-
-Compares the two given strings. If `str1` less than `str2`, returns -1. If `str2` less than `str1`, returns 1. And `str1` and `str2` are equal, then returns 0.

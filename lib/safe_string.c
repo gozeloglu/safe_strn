@@ -133,3 +133,25 @@ int str_cmp(const char *str1, const char *str2, size_t str1_size, size_t str2_si
     // Check again last character ASCII values
     return str1[i] > str2[i] ? 1 : -1;
 }
+
+char *str_mk(const char *str, size_t str_len) {
+    if (str_len+1 > UINT_MAX) {
+        char *s = (char *) malloc(sizeof(char *) * UINT_MAX);
+        int i;
+        for (i = 0; i < UINT_MAX-1; i++) {
+            s[i] = str[i];
+        }
+        s[i] = '\0';
+        return s;
+    }
+
+    char *s = (char *) malloc(sizeof(char *) * str_len+1);
+    int i = 0;
+    while (str[i] != '\0' && i < str_len) {
+        s[i] = str[i];
+        i++;
+    }
+    s[i] = '\0';
+
+    return s;
+}

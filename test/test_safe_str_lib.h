@@ -25,5 +25,7 @@ void test_not_equal_str2_cmp();
 void test_empty_str_cmp();
 void test_null_str_cmp();
 void test_both_null_str_cmp();
-
+void test_str_mk();
+void test_empty_str_mk();
+void test_less_mem_str_mk();
 #endif //SAFE_STRN_TEST_SAFE_STR_LIB_H

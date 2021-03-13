@@ -197,3 +197,48 @@ void test_both_null_str_cmp() {
     assert((res == 0));
     printf("%s str_cmp: Both of them null string\n", CHECK_MARK);
 }
+
+void test_str_mk() {
+    char *s = str_mk("this is a sample string.", 100);
+
+    int len = str_len(s);
+    int isSame = str_cmp("this is a sample string.", s, 24, 24);
+
+    assert__("str_mk: String length is wrong.", (len == 24));
+    assert((len == 24));
+
+    assert__("str_mk: String is not the same.", (isSame == 0));
+    assert(isSame == 0);
+
+    printf("%s str_mk: String and its length correct.\n", CHECK_MARK);
+}
+
+void test_empty_str_mk() {
+    char *s = str_mk("", 100);
+
+    int len = str_len(s);
+    int isSame = str_cmp("", s, 20, 0);
+
+    assert__("str_mk: Empty string length is wrong.", (len == 0));
+    assert((len == 0));
+
+    assert__("str_mk: Empty string is not the same.", (isSame == 0));
+    assert(isSame == 0);
+
+    printf("%s str_mk: Empty string and its length correct.\n", CHECK_MARK);
+}
+
+void test_less_mem_str_mk() {
+    char *s = str_mk("this is a sample string.", 10);
+
+    int len = str_len(s);
+    int isSame = str_cmp("this is a ", s, 24, len);
+
+    assert__("str_mk: Less length string length is wrong.", (len == 10));
+    assert((len == 10));
+
+    assert__("str_mk: String is not the same.", (isSame == 0));
+    assert(isSame == 0);
+
+    printf("%s str_mk: Less length string and its length correct.\n", CHECK_MARK);
+}

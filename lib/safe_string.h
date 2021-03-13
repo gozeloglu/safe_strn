@@ -14,6 +14,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <limits.h>
 
 /// Copy the string from dst to src
 ///
@@ -56,4 +57,11 @@ int str_cat(char *src, const char *append, size_t src_size, size_t app_size);
 /// @returns 0 if str1 == str2
 /// @returns 1 if str1 > str2
 int str_cmp(const char *str1, const char *str2, size_t str1_size, size_t str2_size);
+
+/// Make string
+///
+/// @param str - that we want to create
+/// @param str_len - maximum length of the string
+/// @return char pointer after created
+char *str_mk(const char *str, size_t str_len);
 #endif //SAFE_STRN_SAFE_STRING_H

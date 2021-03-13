@@ -26,4 +26,7 @@ int main() {
     test_empty_str_cmp();
     test_null_str_cmp();
     test_both_null_str_cmp();
+    test_str_mk();
+    test_empty_str_mk();
+    test_less_mem_str_mk();
 }
