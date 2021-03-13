@@ -87,3 +87,6 @@ Compares the two given strings. If `str1` less than `str2`, returns -1. If `str2
 ```c
 int str_cmp(const char *str1, const char *str2, size_t str1_size, size_t str2_size);
 ```
+
+## LICENSE
+[GNU General Public License v3.0](https://github.com/gozeloglu/safe_strn/blob/main/LICENSE)
